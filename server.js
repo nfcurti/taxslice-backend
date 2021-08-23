@@ -7,13 +7,15 @@ var bodyParser = require('body-parser');
 const app = express();
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 var moment = require('moment'); // require
-
+var cors = require('cors')
 // create application/json parser
 var jsonParser = bodyParser.json()
  
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
+
+app.use(cors())
 
 app.post('/export', urlencodedParser,async (req,res)=>{
 	var out = new Date();

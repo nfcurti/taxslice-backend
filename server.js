@@ -65,7 +65,7 @@ app.get('/data/:address' , (req,res)=>{
 	        all_files.push(file); 
 	    });
 	    console.log(all_files)
-	    res.setHeader('Access-Control-Allow-Origin', 'http://0.0.0.0:3000');
+	    res.setHeader('Access-Control-Allow-Origin', 'https://taxslice.vercel.app/');
 	    res.json({txs:all_files})
 	});
 })

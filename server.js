@@ -52,7 +52,7 @@ app.post('/export', urlencodedParser,async (req,res)=>{
 	  .then(()=> console.log('The CSV file was written successfully'));
 })
 
-app.get('/data/:address' , (req,res)=>{
+app.get('/data/:address', cors() , (req,res)=>{
 	var all_files = []
 	console.log(`Checking ${req.params.address}`)
 	fs.readdir(`Output/${req.params.address}`, function (err, files) {
